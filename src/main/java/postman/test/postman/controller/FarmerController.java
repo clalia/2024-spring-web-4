@@ -38,7 +38,7 @@ public class FarmerController {
 
         Farm farm1 = new Farm("FarmName1", "Milano");
         Farm farm2 = new Farm("FarmName2", "Roma");
-        Farm farm3 = new Farm("FarmName3", "Milano");
+        Farm farm3 = new Farm("FarmName3", "Napoli");
         
         farmService.save(farm1);
         farmService.save(farm2);
@@ -55,7 +55,7 @@ public class FarmerController {
         return ResponseEntity.ok().build();
     }
     @GetMapping("")
-    public ResponseEntity<List<Farmer>> getMethodName() {
+    public ResponseEntity<List<Farmer>> getAllFarmers() {
 
         List<Farmer> farmers = farmerService.getAllFarmers();
 

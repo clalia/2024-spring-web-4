@@ -1,13 +1,10 @@
 package postman.test.postman.db.pojo;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 
 @Entity
 public class Farm {
@@ -22,8 +19,6 @@ public class Farm {
     @Column(nullable = false, length = 128)
     private String city;
 
-    @OneToMany(mappedBy = "farm")
-    private List<Farmer> farmers;
 
     public Farm() {
     }
@@ -58,21 +53,12 @@ public class Farm {
         this.city = city;
     }
 
-    public List<Farmer> getFarmers() {
-        return farmers;
-    }
-
-    public void setFarmers(List<Farmer> farmers) {
-        this.farmers = farmers;
-    }
-
     @Override
     public String toString() {
         return "Farm{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", city='" + city + '\'' +
-                ", farmers=" + farmers +
                 '}';
     }
 }
